@@ -8,8 +8,7 @@ Route.all.each do |route|
         driver.update_available_time(route)
         break
       else
-        Vehicle.all.each do |vehicle|
-          puts vehicle.id
+        Vehicle.without_driver.each do |vehicle|
           if vehicle.can_run?(route)
             route.assign_driver_and_vehicle(driver.id, vehicle.id)
             driver.next_available_time = route.ends_at

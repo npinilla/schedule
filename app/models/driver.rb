@@ -6,10 +6,7 @@ class Driver < ActiveRecord::Base
     end
     array_cities = self.cities.split(', ')
     array_route_cities = route_cities.split(', ')
-    puts array_cities
-    puts array_route_cities
     array_route_cities.each do |city|
-      puts city
       if !array_cities.include?(city)
         return false
       end
