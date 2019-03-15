@@ -42,6 +42,7 @@ Route.find_or_create_by(starts_at: Time.new(2019, 3, 15, 9, 30), ends_at: Time.n
 Route.find_or_create_by(starts_at: Time.new(2019, 3, 15, 5, 30), ends_at: Time.new(2019, 3, 15, 9, 40), load_type: 'General', load_sum: 10, cities: 'La Cisterna, Lo Espejo', stops_amount: 5)
 Route.find_or_create_by(starts_at: Time.new(2019, 3, 15, 14, 00), ends_at: Time.new(2019, 3, 15, 15, 40), load_type: 'General', load_sum: 20, cities: 'Maipu, Cerrillos', stops_amount: 6)
 Route.find_or_create_by(starts_at: Time.new(2019, 3, 15, 14, 00), ends_at: Time.new(2019, 3, 15, 16, 20), load_type: 'General', load_sum: 20, cities: 'Providencia', stops_amount: 3)
+Route.find_or_create_by(starts_at: Time.new(2019, 3, 15, 12, 00), ends_at: Time.new(2019, 3, 15, 13, 20), load_type: 'Refrigerado', load_sum: 50, cities: 'Providencia', stops_amount: 3)
 Route.find_or_create_by(starts_at: Time.new(2019, 3, 15, 1, 30), ends_at: Time.new(2019, 3, 15, 3, 40), load_type: 'Refrigerado', load_sum: 10, cities: 'La Cisterna, Lo Espejo', stops_amount: 5)
 Route.find_or_create_by(starts_at: Time.new(2019, 3, 15, 2, 30), ends_at: Time.new(2019, 3, 15, 5, 40), load_type: 'General', load_sum: 10, cities: 'La Cisterna, Lo Espejo', stops_amount: 5)
 Route.find_or_create_by(starts_at: Time.new(2019, 3, 15, 3, 30), ends_at: Time.new(2019, 3, 15, 7, 40), load_type: 'General', load_sum: 1, cities: 'La Cisterna, Lo Espejo', stops_amount: 5)
