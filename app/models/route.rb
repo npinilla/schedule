@@ -22,7 +22,7 @@ class Route < ActiveRecord::Base
     if self.is_scheduled?
       "#{self.vehicle_id}\t#{self.driver_id}\t#{self.id}\t(#{self.starts_at} - #{self.ends_at})"
     else
-      "No es posible\t#{self.driver_id}\t#{self.id}\t(#{self.starts_at} - #{self.ends_at})"
+      "No es posible\t#{self.id}\t(#{self.starts_at} - #{self.ends_at})"
     end
   end
 
