@@ -31,7 +31,7 @@ Route.order(load_sum: :desc).each do |route|
       end
     end
   end
-  s += route.to_s + "\n"
+  s += "#{route}\n"
 end
 puts "\n\n"
 puts "ID V\tID C\tID Ruta\t(Hora inicio - Hora fin)"
