@@ -7,7 +7,6 @@ class CreateDrivers < ActiveRecord::Migration
       t.integer :vehicle_id
       t.string :cities
       t.integer :max_stops
-      t.datetime :next_available_time
 
       t.timestamps
     end

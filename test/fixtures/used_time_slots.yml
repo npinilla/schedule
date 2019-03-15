@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  driver_id: 1
+  star_time: 2019-03-15 16:25:39
+  end_time: 2019-03-15 16:25:39
+
+two:
+  driver_id: 1
+  star_time: 2019-03-15 16:25:39
+  end_time: 2019-03-15 16:25:39

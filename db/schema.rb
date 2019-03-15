@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190315133156) do
+ActiveRecord::Schema.define(version: 20190315192539) do
 
   create_table "drivers", force: true do |t|
     t.string   "name"
@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(version: 20190315133156) do
     t.integer  "vehicle_id"
     t.string   "cities"
     t.integer  "max_stops"
-    t.datetime "next_available_time"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -34,6 +33,14 @@ ActiveRecord::Schema.define(version: 20190315133156) do
     t.integer  "stops_amount"
     t.integer  "vehicle_id"
     t.integer  "driver_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "used_time_slots", force: true do |t|
+    t.integer  "driver_id"
+    t.datetime "start_time"
+    t.datetime "end_time"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

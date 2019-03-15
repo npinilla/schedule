@@ -14,13 +14,24 @@ class Driver < ActiveRecord::Base
     return true
   end
 
+  def has_time?(route)
+    time_slots = UsedTimeSlot.where(driver_id: self.id)
+    time_slots.each do |time_slot|
+      if route.starts_at >= time_slot.start_time && route.starts_at < time_slot.end_time
+        return false
+      elsif route.ends_at > time_slot.start_time && route.ends_at <= time_slot.end_time
+        return false
+      end
+    end
+    return true
+  end
+
   def has_car?
     return self.vehicle_id != nil
   end
 
   def update_available_time(route)
-    self.next_available_time = route.ends_at
-    self.save
+    UsedTimeSlot.create(driver_id: self.id, start_time: route.starts_at, end_time: route.ends_at)
   end
 
   def update_vehicle(vehicle_id)

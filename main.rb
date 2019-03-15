@@ -20,7 +20,7 @@ Route.order(load_sum: :desc).each do |route|
             route.assign_driver_and_vehicle(driver.id, vehicle.id)
             driver.update_available_time(route)
             driver.update_vehicle(vehicle.id)
-            vehicle.update_driver(driver)
+            vehicle.update_driver(driver.id)
             driver_found = true
             break
           end

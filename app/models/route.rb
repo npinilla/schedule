@@ -3,10 +3,7 @@ class Route < ActiveRecord::Base
     if driver.max_stops != nil && driver.max_stops < self.stops_amount
       return false
     end
-    if driver.next_available_time >= self.starts_at
-      return false
-    end
-    if driver.drive_in?(self.cities)
+    if driver.drive_in?(self.cities) && driver.has_time?(self)
       return true
     end
     return false
