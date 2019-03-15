@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  phone: MyString
+  email: MyString
+  vehicle_id: 1
+  cities: MyString
+  max_stops: 1
+  next_available_time: 2019-03-15 10:31:06
+
+two:
+  name: MyString
+  phone: MyString
+  email: MyString
+  vehicle_id: 1
+  cities: MyString
+  max_stops: 1
+  next_available_time: 2019-03-15 10:31:06
