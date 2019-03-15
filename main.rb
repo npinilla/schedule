@@ -2,26 +2,18 @@ s = ''
 Route.all.each do |route|
   Driver.all.each do |driver|
     driver_found = false
-    puts driver.id
     if route.can_assign?(driver)
-      puts "#{driver.id} paso"
       if driver.has_car?
-        puts 'tiene auto'
-        route.driver_id = driver.id
-        route.vehicle_id = driver.vehicle_id
-        route.save
-        driver.next_available_time = route.ends_at
-        driver.save
+        route.assign_driver_and_vehicle(driver.id, driver.vehicle_id)
+        driver.update_available_time(route)
         break
       else
         Vehicle.all.each do |vehicle|
           puts vehicle.id
           if vehicle.can_run?(route)
-            route.driver_id = driver.id
-            route.vehicle_id = vehicle.id
-            route.save
+            route.assign_driver_and_vehicle(driver.id, vehicle.id)
             driver.next_available_time = route.ends_at
-            driver.save
+            driver.update_available_time(route)
             driver_found = true
             break
           end

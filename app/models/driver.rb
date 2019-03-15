@@ -21,4 +21,9 @@ class Driver < ActiveRecord::Base
     return self.vehicle_id != nil
   end
 
+  def update_available_time(route)
+    self.next_available_time = route.ends_at
+    self.save
+  end
+
 end

@@ -21,6 +21,12 @@ class Route < ActiveRecord::Base
     return false
   end
 
+  def assign_driver_and_vehicle(driver_id, vehicle_id)
+    self.driver_id = driver_id
+    self.vehicle_id = vehicle_id
+    self.save
+  end
+
   def to_s
     "#{self.vehicle_id}\t#{self.driver_id}\t#{self.id}\t(#{self.starts_at} - #{self.ends_at})"
   end
