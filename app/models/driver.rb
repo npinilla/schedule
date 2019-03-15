@@ -23,4 +23,9 @@ class Driver < ActiveRecord::Base
     self.save
   end
 
+  def update_vehicle(vehicle_id)
+    self.vehicle_id = vehicle_id
+    self.save
+  end
+
 end

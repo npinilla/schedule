@@ -7,16 +7,7 @@ class Route < ActiveRecord::Base
       return false
     end
     if driver.drive_in?(self.cities)
-      if driver.has_car?
-        car = Vehicle.find driver.vehicle_id
-        if car.can_run?(self)
-          return true
-        else
-          return false
-        end
-      else
-        return true
-      end
+      return true
     end
     return false
   end
@@ -28,7 +19,15 @@ class Route < ActiveRecord::Base
   end
 
   def to_s
-    "#{self.vehicle_id}\t#{self.driver_id}\t#{self.id}\t(#{self.starts_at} - #{self.ends_at})"
+    if self.is_scheduled?
+      "#{self.vehicle_id}\t#{self.driver_id}\t#{self.id}\t(#{self.starts_at} - #{self.ends_at})"
+    else
+      "No es posible\t#{self.driver_id}\t#{self.id}\t(#{self.starts_at} - #{self.ends_at})"
+    end
+  end
+
+  def is_scheduled?
+    return self.driver_id != nil && self.vehicle_id != nil
   end
 
 end
